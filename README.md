@@ -30,3 +30,40 @@ static bool CheckWin() // Pārbaudes metode uzvarētājam.
             {
                 return false;
             }
+
+
+Gājieni
+
+
+
+step = int.Parse(Console.ReadLine());
+
+{
+    if (player1.Equals(1))
+    {
+        return 1;
+    }
+    else
+    {
+        return 2;
+    }
+}    
+    
+    vai arī
+    
+    
+    if (pos[step] != "X" && pos[step] != "O" 
+    {
+          if (player % 2== 0)
+          {
+            pos[step] = "O"
+            player++
+           }
+          else 
+          {
+           pos[step] = "X";
+           player++
+          }
+     }
+    else
+   
