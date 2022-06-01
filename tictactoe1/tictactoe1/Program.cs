@@ -18,6 +18,51 @@ DrawBoard();
 
 
 
+//do
+//{
+
+//        if (player % 2 == 0)
+//        {
+//            Console.WriteLine("speletaja 2 gajiens");
+
+//        }
+//        else
+//        {
+//            Console.WriteLine("speletaja1 gajiens");
+//        }
+
+//        DrawBoard();
+
+//        step = int.Parse(Console.ReadLine());
+
+//        if (pos[step] != "X" && pos[step] != "O")
+
+//        {
+//            if (player % 2 == 0)
+//            {
+//                pos[step] = "O";
+//                player++;
+//            }
+//            else
+//            {
+//                pos[step] = "X";
+//                player++;
+//            }
+//        }
+//        else
+//        {
+
+
+//        }
+//        flag = CheckWin();
+
+//    }
+//    while(flag != true && flag != false);
+
+
+
+//}
+
 
 
 
