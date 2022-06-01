@@ -8,7 +8,9 @@ namespace tictactoe1
 {
     public class Game
     {
+        public static int player = 1;
         public static int step;
+        public static bool flag = true;
 
         public static string[] pos = new string[10] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -29,19 +31,19 @@ namespace tictactoe1
         }
         public static string GetFirstLineTekst(string[] values)
         {
-            string text = $"  {values[0]}  |  {values[1]}  |  {values[2]}  ";
+            string text = $"  {values[1]}  |  {values[2]}  |  {values[3]}  ";
             return text;
             
         }
         public static string GetSecondLineTekst(string[] values)
         {
-            string text = $"  {values[0]}  |  {values[1]}  |  {values[2]}  ";
+            string text = $"  {values[4]}  |  {values[5]}  |  {values[6]}  ";
             return text;
 
         }
         public static string GetThirdLineTekst(string[] values)
         {
-            string text = $"  {values[0]}  |  {values[1]}  |  {values[2]}  ";
+            string text = $"  {values[7]}  |  {values[8]}  |  {values[9]}  ";
             return text;
 
         }
