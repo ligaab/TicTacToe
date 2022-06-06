@@ -1,0 +1,67 @@
+using static tictactoe1.Game;
+
+
+Console.WriteLine("Laipni lugts spele TicTacToe");
+Console.WriteLine("Katram speletajam ir simbols X vai O. Uzvar tas kurs pirmais savac tris vienadus simbolus rinda, kolonna, pa diognali");
+Console.WriteLine();
+Console.WriteLine();
+
+
+Console.WriteLine($"Speletajs 1 ir {player1}, speletajs 2 ir {player2}");
+
+if (playing = true) 
+
+
+    DrawBoard();
+{
+    Console.WriteLine("speletaja 1 gajiens");
+}
+step = int.Parse(Console.ReadLine());
+
+if (step == 2)
+    {
+        pos[step] = "0";
+        correctInput = true;
+    }
+
+    else
+    {
+        pos[step] = "X";
+        player++;
+    }
+DrawBoard();
+{
+    Console.WriteLine("speletaja 2 gajiens");
+}
+step = int.Parse(Console.ReadLine());
+
+if (step == 1)
+{
+    pos[step] = "X";
+    correctInput = true;
+}
+
+else
+{
+    pos[step] = "0";
+    player++;
+}
+//if (pos[step] == "0")
+//{
+//    pos[step] = "X";
+//    player++;
+//}
+//else
+//{
+//    pos[step] = "0";
+//    player++;
+//}
+DrawBoard();
+flag = CheckWin();
+
+    {
+        while (flag == false) ;
+    }
+
+
+
