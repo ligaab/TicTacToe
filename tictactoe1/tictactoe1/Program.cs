@@ -25,7 +25,6 @@ Console.WriteLine($"Spēlētājs 2 ir {charValue2}");
 
 
 
-
 do
 {
    
