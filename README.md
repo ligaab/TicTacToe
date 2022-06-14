@@ -67,3 +67,26 @@ step = int.Parse(Console.ReadLine());
      }
     else
    
+   Piedāvāju šādu variantu spēles ievada daļai. Varam mēģināt piestrādāt pie tā, lai spēlētājiem atbildes Jā/Nē vietā nebūtu iespēja uzrakstīt kaut kādu ķeburu un, lai spēle, piemēram, sāktos tikai uz atbildi "Jā".
+   
+   
+Console.WriteLine("Esi sveicināts spēlē Tic Tac Toe");
+Console.WriteLine();
+Console.WriteLine("Ievadiet pirmā spēlētāja vārdu?");
+
+string name1 = Console.ReadLine();
+Console.WriteLine();
+Console.WriteLine($"{name1}, Tu būsi spēlētājs X ");
+Console.WriteLine();
+Console.WriteLine("Ievadiet otrā spelētāja vārdu?");
+Console.WriteLine();
+string name2 = Console.ReadLine();
+Console.WriteLine($"{name2}, Tu būsi spēlētājs O ");
+Console.WriteLine();
+Console.WriteLine("Jūsu uzdevums ir pēc kārtas izvēlēties lauciņus, tādējādi mēģinot izveidot rindu no saviem simboliem.");
+Console.WriteLine("Spēles mērķis ir pirmajam izveidot horizintāli, vertikāli vai pa diagonāli 3 simbolu rindu.");
+Console.WriteLine();
+Console.WriteLine("Vai esat gatavi sākt? Jā/Nē");
+Console.WriteLine();
+string answer = Console.ReadLine();
+
