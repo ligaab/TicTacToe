@@ -69,6 +69,7 @@ do
         Console.Clear();
         DrawBoard();
     
+
     flag = CheckWin();
 
     input = Game.correctInput();
