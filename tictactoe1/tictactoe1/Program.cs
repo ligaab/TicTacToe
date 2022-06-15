@@ -1,18 +1,31 @@
 ﻿
 
 
+using tictactoe1;
 using static tictactoe1.Game;
-using static tictactoe1.Player;
+using static tictactoe1.Simbol;
+
+
+
 
 Console.WriteLine("Laipni lugts spele TicTacToe");
 
-tictactoe1.Player diferntPlayer = tictactoe1.Player.Player1;
+HumanPlayer player1 = new HumanPlayer();
 
-char charValue = (char)Player1;
-Console.WriteLine($"Spēlētājs 1 ir {charValue}");
+player1.GetPlayerName();
+player1.Simbol = Simbol.X;
 
-char charValue2 = (char)Player2;
-Console.WriteLine($"Spēlētājs 2 ir {charValue2}");
+HumanPlayer player2 = new HumanPlayer();
+player2.GetPlayerName();
+player2.Simbol = Simbol.O;
+
+//tictactoe1.Player diferntPlayer = tictactoe1.Player.Player1;
+
+//char charValue = (char)Player1;
+Console.WriteLine($"Spēlētājs 1 ir {player1.Simbol}, tavs vards ir {player1.Name}");
+
+//char charValue2 = (char)Player2;
+Console.WriteLine($"Spēlētājs 2 ir {player2.Simbol}, tavs vards ir {player2.Name}");
 
 
     Console.WriteLine("Katram speletajam ir simbols X vai O. Uzvar tas kurs pirmais savac tris vienadus simbolus rinda, kolonna, pa diognali");
@@ -30,11 +43,24 @@ do
     
     Console.Clear();
     DrawBoard();
-   
-    flag = CheckWin();
-    //input = correctInput();
-   
+  
 
+    if (flag  !=0)
+
+    {
+        break;
+    }
+    flag = CheckWin();
+
+    input = Game.correctInput();
+    if (input == false)
+    {
+        Console.WriteLine("izvēlies citu skaitli!");
+    }
+    else if (input == true)
+    {
+        Console.WriteLine("turpini spēli!");
+    }
 
     Console.WriteLine("speletaja 2 gajiens");
         step = int.Parse(Console.ReadLine());
@@ -44,20 +70,29 @@ do
         DrawBoard();
     
     flag = CheckWin();
-    //input = correctInput();
-      
+
+    input = Game.correctInput();
+    if (input == false)
+    {
+        Console.WriteLine("izvēlies citu skaitli!");
+    }
+    else if (input == true)
+    {
+        Console.WriteLine("turpini spēli!");
+    }
+
 }
-while (flag != 1 && flag != -1 && flag != 2);
+while (flag == 0);
 
     if (flag == 1)
     {
-        Console.WriteLine($"Player  {charValue2} has von");
+        Console.WriteLine($"Player  {player2.Name} has von");
 
     }
-    else if (flag == 2)
+     if (flag == 2)
     {
 
-        Console.WriteLine($"Player  {charValue} has von");
+        Console.WriteLine($"Player  {player1.Name} has von");
 
     }
     else
@@ -66,13 +101,13 @@ while (flag != 1 && flag != -1 && flag != 2);
     }
 
 
-//if (input == true)
+//if (input == false)
 //{
-//    Console.WriteLine("Izvēlies citu skaitli!");
+//    Console.WriteLine("izvēlies citu skaitli!");
 //}
 //else
 //{
-//    Console.WriteLine("Turpini spēli!");
+//    Console.WriteLine("turpini spēli!");
 //}
 
 

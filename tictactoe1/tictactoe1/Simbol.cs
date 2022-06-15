@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace tictactoe1
 {
-    public class Player
+    public enum Simbol
     {
-        public string Name { get; set; }
-        public Simbol Simbol { get; set; }
-       
-
-
+        X,
+        O,
+        A,
     }
 }
