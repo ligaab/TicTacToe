@@ -19,6 +19,7 @@ HumanPlayer player2 = new HumanPlayer();
 player2.GetPlayerName();
 player2.Simbol = Simbol.O;
 
+
 //tictactoe1.Player diferntPlayer = tictactoe1.Player.Player1;
 
 //char charValue = (char)Player1;
@@ -32,84 +33,97 @@ Console.WriteLine($"Spēlētājs 2 ir {player2.Simbol}, tavs vards ir {player2.N
     Console.WriteLine();
     Console.WriteLine();
 
+
 DrawBoard();
 
 do
 {
 
     Console.WriteLine("speletaja 1 gajiens");
-    step = int.Parse(Console.ReadLine());
-    pos[step] = "X";
-    
+    step1 = int.Parse(Console.ReadLine());
+    pos[step1] = "X";
     Console.Clear();
     DrawBoard();
-  
+    
+    flag = Game.CheckWin();
+    board = boardFull();
 
-    if (flag  !=0)
+    if (Game.flag == 1)
 
     {
         break;
     }
-    flag = CheckWin();
-
     input = Game.correctInput();
     if (input == false)
     {
         Console.WriteLine("izvēlies citu skaitli!");
-    }
-    else if (input == true)
-    {
-        Console.WriteLine("turpini spēli!");
-    }
-
-    Console.WriteLine("speletaja 2 gajiens");
-        step = int.Parse(Console.ReadLine());
-        pos[step] = "O";
-        
-        Console.Clear();
-        DrawBoard();
-    
-
-    flag = CheckWin();
-
-    input = Game.correctInput();
-    if (input == false)
-    {
-        Console.WriteLine("izvēlies citu skaitli!");
-    }
-    else if (input == true)
-    {
-        Console.WriteLine("turpini spēli!");
-    }
-
-}
-while (flag == 0);
-
-    if (flag == 1)
-    {
-        Console.WriteLine($"Player  {player2.Name} has von");
-
-    }
-     if (flag == 2)
-    {
-
-        Console.WriteLine($"Player  {player1.Name} has von");
-
+        Console.ReadLine();
     }
     else
     {
-        flag = 0;
+        Console.WriteLine("");
+    }
+    
+
+
+    Console.WriteLine("speletaja 2 gajiens");
+    step2 = int.Parse(Console.ReadLine());
+    pos[step2] = "O";
+    Console.Clear();
+    DrawBoard();
+
+    flag = Game.CheckWin();
+    board = boardFull();
+
+    if (Game.CheckWin() == 2)
+
+    {
+        break;
+    }
+    input = Game.correctInput();
+    if (input == false)
+    {
+        Console.WriteLine("izvēlies citu skaitli!");
+        Console.ReadLine();
+    }
+    else
+    {
+        Console.WriteLine("");
+    }
+   }
+while (flag == 0);
+
+
+    if (flag == 2)
+    {
+        Console.WriteLine($"Player  {player2.Name} has von");
+        Console.WriteLine("Spēlējam vēlreiz?");
+
+        DrawBoard();
+
+    }
+    else if (flag == 1)
+    {
+
+        Console.WriteLine($"Player  {player1.Name} has von");
+        Console.WriteLine("Spēlējam vēlreiz?");
+
+
+    }
+
+    else if (Game.boardFull() != -1)
+    {
+        Console.WriteLine("Viss laukums ir aizpildīts - NEZŠĶIRTS REZULTĀTS!");
+
     }
 
 
-//if (input == false)
-//{
-//    Console.WriteLine("izvēlies citu skaitli!");
-//}
-//else
-//{
-//    Console.WriteLine("turpini spēli!");
-//}
+
+
+
+
+
+
 
 
 
@@ -119,13 +133,3 @@ while (flag == 0);
 
 // jāizveido pārbaudes katrai rindai ar uzvaru
 // spēles nobeigums
-
-
-
-
-
-
-
-
-
-
