@@ -21,13 +21,13 @@ Console.WriteLine($"Spēlētājs 1 ir {player1.Simbol}, tavs vards ir {player1.N
 //char charValue2 = (char)Player2;
 Console.WriteLine($"Spēlētājs 2 ir {player2.Simbol}, tavs vards ir {player2.Name}");
 
-    Console.WriteLine("Katram speletajam ir simbols X vai O. Uzvar tas kurs pirmais savac tris vienadus simbolus rinda, kolonna, pa diognali");
-    Console.WriteLine();
-    Console.WriteLine();
+Console.WriteLine("Katram speletajam ir simbols X vai O. Uzvar tas kurs pirmais savac tris vienadus simbolus rinda, kolonna, pa diognali");
+Console.WriteLine();
+Console.WriteLine();
 DrawBoard();
 
 do
-{   
+{
     Console.WriteLine("speletaja 1 gajiens");
     step1 = int.Parse(Console.ReadLine());
     pos[step1] = "X";
@@ -38,17 +38,43 @@ do
     input = Game.correctInput();
 
     {
-        if (Game.flag == 1)
+        if (flag == 1)
         {
-            break;
+            Console.WriteLine($"Spēlētājs  {player1.Name} ir uzvarējis");
         }
-       
+        if (flag == 1 || board == -1)
+        {
+            Console.WriteLine("Ko darīsim tālāk?");
+            Console.WriteLine("1. Spēlēt atkal");
+            Console.WriteLine("2. Pamest spēli");
+            Console.WriteLine("");
+            Console.WriteLine("Ievadi savu izvēli: ");
+            choice = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i < 10; i++)
+            {
+                pos[i] = i.ToString();
+            }
+            if (choice == 1)
+            {
+                Console.Clear();
+                Console.WriteLine();
+                DrawBoard();
+                Console.WriteLine("Spēlējam atkal!");
+            }
+            else if (choice == 2)
+            {
+                Console.Clear();
+                Console.WriteLine("Paldies par Spēli!");
+                break;
+            }
+        }
         else if (input == false)
         {
             Console.Clear();
             DrawBoard();
             Console.WriteLine("izvēlies citu skaitli!");
-            step1 = int.Parse(Console.ReadLine());            
+            step2 = int.Parse(Console.ReadLine());
         }
         else
         {
@@ -57,10 +83,9 @@ do
         if (board == -1)
         {
             Console.WriteLine("Viss laukums ir aizpildīts - NEZŠĶIRTS REZULTĀTS!");
-            break;
+
         }
     }
-   
 
     Console.WriteLine("speletaja 2 gajiens");
     step2 = int.Parse(Console.ReadLine());
@@ -72,17 +97,44 @@ do
     input = Game.correctInput();
 
     {
-        if (Game.CheckWin() == 2)
+        if (flag == 2)
         {
-            break;
+            Console.WriteLine($"Spēlētājs  {player2.Name} ir uzvarējis");
         }
-        
+        if (flag == 2 || board == -1)
+        {
+            Console.WriteLine("Ko darīsim tālāk?");
+            Console.WriteLine("1. Spēlēt atkal");
+            Console.WriteLine("2. Pamest spēli");
+            Console.WriteLine("");
+            Console.WriteLine("Ievadi savu izvēli: ");
+            choice = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i < 10; i++)
+            {
+                pos[i] = i.ToString();
+            }
+
+            if (choice == 1)
+            {
+                Console.Clear();
+                Console.WriteLine();
+                DrawBoard();
+                Console.WriteLine("Spēlējam atkal!");
+            }
+            else if (choice == 2)
+            {
+                Console.Clear();
+                Console.WriteLine("Paldies par Spēli!");
+                break;
+            }
+        }
         else if (input == false)
         {
             Console.Clear();
             DrawBoard();
             Console.WriteLine("izvēlies citu skaitli!");
-            step2 = int.Parse(Console.ReadLine());         
+            step1 = int.Parse(Console.ReadLine());
         }
         else
         {
@@ -92,43 +144,12 @@ do
     if (board == -1)
     {
         Console.WriteLine("Viss laukums ir aizpildīts - NEZŠĶIRTS REZULTĀTS!");
-        break;
-    }
-    
-}
-while (flag == 0);
-{
-    if (flag == 2)
-    {
-        Console.WriteLine($"Spēlētājs  {player2.Name} ir uzvarējis");      
-    }
-    else if (flag == 1)
-    {
-        Console.WriteLine($"Spēlētājs  {player1.Name} ir uzvarējis");     
     }
 }
-if (flag == 2 || flag == 1 || board == -1)
-{
-    Console.WriteLine("Ko darīsim tālāk?");
-    Console.WriteLine("1. Spēlēt atkal");// pagaidām vēl nestrādā!
-    Console.WriteLine("2. Pamest spēli");
-    Console.WriteLine("");
-    Console.WriteLine("Ievadi savu izvēli: ");
-    choice = int.Parse(Console.ReadLine());
+while (flag == 0 || choice == 1);
 
-    if (choice == 1)
-    {
-        Console.Clear();
-        DrawBoard();
-        
-    }
-    else if (choice == 2)
-    {
-        Console.Clear();
-        Console.WriteLine("Paldies par Spēli!");
 
-    }
-}
+
 
 
 

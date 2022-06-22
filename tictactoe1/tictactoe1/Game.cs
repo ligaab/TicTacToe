@@ -20,8 +20,8 @@ namespace tictactoe1
 
         public static void Main(string[] args)
         {
-            //DrawBoard();
-            //Console.WriteLine("");
+            DrawBoard();
+            Console.WriteLine("");
         }
         public static void DrawBoard()
         {
