@@ -13,7 +13,7 @@ namespace tictactoe1
         {
 
 
-            if (step < 0 && step > 10)
+            if (step < 0 || step > 10)
             {
                 throw new NotRightNumber("neatbilstos cipars");
 
