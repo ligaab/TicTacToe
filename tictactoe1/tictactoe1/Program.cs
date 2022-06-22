@@ -1,6 +1,7 @@
 ﻿using tictactoe1;
 using static tictactoe1.Game;
 using static tictactoe1.Simbol;
+using static tictactoe1.Validation;
 
 
 Console.WriteLine("Laipni lugts spele TicTacToe");
@@ -25,21 +26,44 @@ Console.WriteLine();
 Console.WriteLine();
 DrawBoard();
 
+
+
+
+
 do
 {
-    Console.WriteLine("speletaja 1 gajiens");
-    step1 = int.Parse(Console.ReadLine());
-    pos[step1] = "X";
-    if(step1 == 2)
-    {
-        Console.WriteLine("izvēlies citu skaitli!");
-          step2 = int.Parse(Console.ReadLine());
-    }
-    else
-    {
-        
-    }
+    //Console.WriteLine("speletaja 1 gajiens");
+    //step1 = int.Parse(Console.ReadLine());
 
+    try
+    {
+        Console.WriteLine("speletaja 1 gajiens");
+        step1 = int.Parse(Console.ReadLine());
+        NotRightNumber(step1);
+    }
+    catch (NotRightNumber notRightNumber)
+    {
+        Console.WriteLine($"kluda: {notRightNumber.Message}");
+        Console.WriteLine("izvelies skaitli no 1-9");
+        step1 = int.Parse(Console.ReadLine());
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("tu neievadiji skaitli");
+        Console.WriteLine("izvelies skaitli no 1-9");
+        step1 = int.Parse(Console.ReadLine());
+    }
+    pos[step1] = "X";
+
+    //if (step1 == 2)
+    //{
+    //    Console.WriteLine("izvēlies citu skaitli!");
+    //      step2 = int.Parse(Console.ReadLine());
+    //}
+    //else
+    //{
+        
+    //}
 
     Console.Clear();
     DrawBoard();
@@ -75,6 +99,19 @@ do
 
     Console.WriteLine("speletaja 2 gajiens");
     step2 = int.Parse(Console.ReadLine());
+
+    
+    try
+    {
+        NotRightNumber(step2);
+
+    }
+    catch (NotRightNumber notRightNumber)
+    {
+        Console.WriteLine($"kluda: {notRightNumber.Message}");
+        Console.WriteLine("izvelies skaitli no 1-9");
+        step2 = int.Parse(Console.ReadLine());
+    }
     pos[step2] = "O";
     Console.Clear();
     DrawBoard();
@@ -89,13 +126,13 @@ do
             choiceGameover();
         }
       
-        else if (input == false)
-        {
-            Console.Clear();
-            DrawBoard();
-            Console.WriteLine("izvēlies citu skaitli!");
-            step1 = int.Parse(Console.ReadLine());
-        } 
+        //else if (input == false)
+        //{
+        //    Console.Clear();
+        //    DrawBoard();
+        //    Console.WriteLine("izvēlies citu skaitli!");
+        //    step1 = int.Parse(Console.ReadLine());
+        //} 
     }
     if (board == -1)
     {
@@ -108,6 +145,7 @@ do
     }
 }
 while (flag == 0 || choice == 1);
+
 
 
 

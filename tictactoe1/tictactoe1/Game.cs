@@ -17,6 +17,8 @@ namespace tictactoe1
         public static int choice;
 
         public static string[] pos = new string[10] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+        private object notRighteNumber;
+
         public static void Main(string[] args)
         {
             DrawBoard();
@@ -45,19 +47,19 @@ namespace tictactoe1
             string text = $"  {values[7]}  |  {values[8]}  |  {values[9]}  ";
             return text;
         }
-        public static bool correctInput()
-        {
-            if (pos[step2] == "X" || pos[step1] == "O")
-            {
-                //Console.WriteLine("false");
-                return false;
-            }
-           else
-            {
-                //Console.WriteLine("true");
-                return true;
-            }
-        }
+        //public static bool correctInput()
+        //{
+        //    if (pos[step2] == "X" || pos[step1] == "O")
+        //    {
+        //        //Console.WriteLine("false");
+        //        return false;
+        //    }
+        //   else
+        //    {
+        //        //Console.WriteLine("true");
+        //        return true;
+        //    }
+        //}
         public static int CheckWin()
         {
             if
@@ -134,7 +136,19 @@ namespace tictactoe1
                 }
             }
         }
+        //public static void NotRightNumber()
+        //{
+            
+                
+        //        if (step1 <1 || step1 > 9)
+        //        {
+        //            throw new NotRightNumber("neatbilstos cipars");
+
+        //        }
+           
+        //}
     }
+
      
 }
 
