@@ -1,0 +1,31 @@
+Piekoriģēju beigas. "Spēlēt atkal" parādījās tukšs Drawboard... vienīgi gājienus izdarīt nesanāk.
+
+if (flag == 2 || flag == 1 || board == -1)
+{
+    Console.WriteLine("Ko darīsim tālāk?");
+    Console.WriteLine("1. Spēlēt atkal");
+    Console.WriteLine("2. Pamest spēli");
+    Console.WriteLine("");
+    Console.WriteLine("Ievadi savu izvēli: ");
+    choice = int.Parse(Console.ReadLine());
+
+    for (int i = 1; i < 10; i++)
+    {
+        pos[i] = i.ToString();
+    }
+
+    if (choice == 1)
+    {
+        
+        // Console.Clear();
+        Console.WriteLine();
+        DrawBoard();
+        
+    }
+    else if (choice == 2)
+    {
+        Console.Clear();
+        Console.WriteLine("Paldies par Spēli!");
+
+    }
+}
