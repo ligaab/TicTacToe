@@ -30,11 +30,22 @@ do
     Console.WriteLine("speletaja 1 gajiens");
     step1 = int.Parse(Console.ReadLine());
     pos[step1] = "X";
+    if(step1 == 2)
+    {
+        Console.WriteLine("izvēlies citu skaitli!");
+          step2 = int.Parse(Console.ReadLine());
+    }
+    else
+    {
+        
+    }
+
+
     Console.Clear();
     DrawBoard();
     flag = Game.CheckWin();
     board = boardFull();
-    input = Game.correctInput();
+    //input = Game.correctInput();
 
     {
         if (flag == 1)
@@ -42,14 +53,14 @@ do
             Console.WriteLine($"Spēlētājs  {player1.Name} ir uzvarējis");
             choiceGameover();
         }
-       
-        else if (input == false)
-        {
-            Console.Clear();
-            DrawBoard();
-            Console.WriteLine("izvēlies citu skaitli!");
-            step2 = int.Parse(Console.ReadLine());
-        }
+
+        //else if (input == false)
+        //{
+        //    Console.Clear();
+        //    DrawBoard();
+        //    Console.WriteLine("izvēlies citu skaitli!");
+        //    step2 = int.Parse(Console.ReadLine());
+        //}
         if (board == -1)
         {
             Console.WriteLine("Viss laukums ir aizpildīts - NEZŠĶIRTS REZULTĀTS!");
@@ -69,7 +80,7 @@ do
     DrawBoard();
     flag = Game.CheckWin();
     board = boardFull();
-    input = Game.correctInput();
+    //input = Game.correctInput();
 
     {
         if (flag == 2)
