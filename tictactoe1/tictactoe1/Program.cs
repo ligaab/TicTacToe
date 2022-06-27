@@ -40,6 +40,8 @@ do
         Console.WriteLine("speletaja 1 gajiens");
         step1 = int.Parse(Console.ReadLine());
         NotRightNumber(step1);
+        CorectInput(pos);
+
     }
     catch (NotRightNumber notRightNumber)
     {
@@ -51,6 +53,12 @@ do
     {
         Console.WriteLine("tu neievadiji skaitli");
         Console.WriteLine("izvelies skaitli no 1-9");
+        step1 = int.Parse(Console.ReadLine());
+    }
+    catch (CorectInput corectInput)
+    {
+        Console.WriteLine($"kluda: {corectInput.Message}");
+        Console.WriteLine("ludzu izvelies citu laucinu");
         step1 = int.Parse(Console.ReadLine());
     }
     pos[step1] = "X";
@@ -145,6 +153,10 @@ do
     }
 }
 while (flag == 0 || choice == 1);
+
+
+
+
 
 
 

@@ -12,10 +12,10 @@ namespace tictactoe1
         public static int step1 = 1;
         public static int step2 = 2;
         public static int flag = 0;
-        public static bool input;
+        public static string input;
         public static int board = -1;
         public static int choice;
-
+        public static string step;
         public static string[] pos = new string[10] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         private object notRighteNumber;
 

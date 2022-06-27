@@ -8,7 +8,8 @@ namespace tictactoe1
 {
     public class Validation
     {
-         
+        
+
         public static void NotRightNumber(int step)
         {
 
@@ -24,6 +25,16 @@ namespace tictactoe1
                 
 
         }
-        
+        public static void CorectInput(string[] pos)
+        {
+
+            if (pos[1] == "O" || pos[2] == "O" || pos[3] == "O" || pos[4] == "O" || pos[5] == "O" || pos[6] == "O" ||pos[7] == "O" || pos[8] == "O" || pos[9] == "O")
+            {
+                throw new CorectInput("Sis laucins ir aiznemts, ludzu izvelies citu");
+            }
+           
+
+        }
+
     }
 }
