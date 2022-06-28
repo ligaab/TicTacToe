@@ -18,6 +18,8 @@ namespace tictactoe1
         public static string step;
         public static string[] pos = new string[10] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         private object notRighteNumber;
+        private object corectInput;
+
 
         public static void Main(string[] args)
         {
@@ -136,17 +138,7 @@ namespace tictactoe1
                 }
             }
         }
-        //public static void NotRightNumber()
-        //{
-            
-                
-        //        if (step1 <1 || step1 > 9)
-        //        {
-        //            throw new NotRightNumber("neatbilstos cipars");
-
-        //        }
-           
-        //}
+       
     }
 
      

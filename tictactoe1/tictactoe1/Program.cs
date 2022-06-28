@@ -63,16 +63,6 @@ do
     }
     pos[step1] = "X";
 
-    //if (step1 == 2)
-    //{
-    //    Console.WriteLine("izvēlies citu skaitli!");
-    //      step2 = int.Parse(Console.ReadLine());
-    //}
-    //else
-    //{
-        
-    //}
-
     Console.Clear();
     DrawBoard();
     flag = Game.CheckWin();
@@ -105,14 +95,16 @@ do
     
     }
 
-    Console.WriteLine("speletaja 2 gajiens");
-    step2 = int.Parse(Console.ReadLine());
+    //Console.WriteLine("speletaja 2 gajiens");
+    //step2 = int.Parse(Console.ReadLine());
 
     
     try
     {
+        Console.WriteLine("speletaja 2 gajiens");
+        step2 = int.Parse(Console.ReadLine());
         NotRightNumber(step2);
-
+        CorectInput(pos);
     }
     catch (NotRightNumber notRightNumber)
     {
@@ -120,6 +112,19 @@ do
         Console.WriteLine("izvelies skaitli no 1-9");
         step2 = int.Parse(Console.ReadLine());
     }
+    catch (FormatException)
+    {
+        Console.WriteLine("tu neievadiji skaitli");
+        Console.WriteLine("izvelies skaitli no 1-9");
+        step2 = int.Parse(Console.ReadLine());
+    }
+    catch (CorectInput corectInput)
+    {
+        Console.WriteLine($"kluda: {corectInput.Message}");
+        Console.WriteLine("ludzu izvelies citu laucinu");
+        step2 = int.Parse(Console.ReadLine());
+    }
+
     pos[step2] = "O";
     Console.Clear();
     DrawBoard();
