@@ -9,8 +9,8 @@ namespace tictactoe1
     public class Game
     {
         public static int Player;
-        public static int step1 = 1;
-        public static int step2 = 2;
+        //public static int step1 = 1;
+        //public static int step2 = 2;
         public static int flag = 0;
         public static string input;
         public static int board = -1;
@@ -56,7 +56,7 @@ namespace tictactoe1
         //        //Console.WriteLine("false");
         //        return false;
         //    }
-        //   else
+        //    else
         //    {
         //        //Console.WriteLine("true");
         //        return true;

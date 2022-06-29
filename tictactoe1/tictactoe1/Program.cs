@@ -26,17 +26,15 @@ Console.WriteLine();
 Console.WriteLine();
 DrawBoard();
 
-
-
-
-
 do
 {
+    ;
     //Console.WriteLine("speletaja 1 gajiens");
     //step1 = int.Parse(Console.ReadLine());
-
+   
     try
     {
+        
         Console.WriteLine("speletaja 1 gajiens");
         step1 = int.Parse(Console.ReadLine());
         NotRightNumber(step1);
@@ -60,13 +58,14 @@ do
         Console.WriteLine($"kluda: {corectInput.Message}");
         Console.WriteLine("ludzu izvelies citu laucinu");
         step1 = int.Parse(Console.ReadLine());
+
     }
     pos[step1] = "X";
-
     Console.Clear();
     DrawBoard();
     flag = Game.CheckWin();
     board = boardFull();
+
     //input = Game.correctInput();
 
     {
@@ -101,6 +100,7 @@ do
     
     try
     {
+        
         Console.WriteLine("speletaja 2 gajiens");
         step2 = int.Parse(Console.ReadLine());
         NotRightNumber(step2);
@@ -123,13 +123,14 @@ do
         Console.WriteLine($"kluda: {corectInput.Message}");
         Console.WriteLine("ludzu izvelies citu laucinu");
         step2 = int.Parse(Console.ReadLine());
-    }
 
+    }
     pos[step2] = "O";
     Console.Clear();
     DrawBoard();
     flag = Game.CheckWin();
     board = boardFull();
+
     //input = Game.correctInput();
 
     {
