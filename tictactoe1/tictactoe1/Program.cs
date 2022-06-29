@@ -28,14 +28,12 @@ DrawBoard();
 
 do
 {
-    ;
-    //Console.WriteLine("speletaja 1 gajiens");
-    //step1 = int.Parse(Console.ReadLine());
+    
    
     try
     {
         
-        Console.WriteLine("speletaja 1 gajiens");
+        Console.WriteLine($"{player1.Name} tavs gajiens");
         step1 = int.Parse(Console.ReadLine());
         NotRightNumber(step1);
         CorectInput(pos);
@@ -101,7 +99,7 @@ do
     try
     {
         
-        Console.WriteLine("speletaja 2 gajiens");
+        Console.WriteLine($"{player2.Name} tavs gajiens");
         step2 = int.Parse(Console.ReadLine());
         NotRightNumber(step2);
         CorectInput(pos);
